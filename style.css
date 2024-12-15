@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -20,7 +20,7 @@ body {
     width: 650px;
     height: 400px;
     display: flex;
-    background: linear-gradient(66deg, #ffffff 50%, #000000 50%);
+    background: linear-gradient(66deg, #ffffff 50%, #1a1a1a 50%);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
@@ -54,6 +54,16 @@ body {
     border-radius: 5px;
     outline: none;
     font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.input-box input:hover {
+    border-color: #000000;
 }
 
 .input-box label {
@@ -97,11 +107,16 @@ body {
 
 .btn:hover {
     background: #333;
+    transform: scale(1.05);
+}
+
+.btn:focus {
+    outline: 2px solid #4a00e0;
 }
 
 .link {
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 10px;
 }
 
@@ -116,6 +131,10 @@ body {
     text-decoration: underline;
 }
 
+.link a:active {
+    color: #800080;
+}
+
 /* Welcome Section */
 .welcome-box {
     width: 50%;
@@ -126,12 +145,30 @@ body {
     text-align: center;
     color: #fff;
 }
+
 .welcome-box h1 {
     font-size: 28px;
     margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .welcome-box p {
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .form-box,
+    .welcome-box {
+        width: 100%;
+        padding: 20px;
+    }
 }
